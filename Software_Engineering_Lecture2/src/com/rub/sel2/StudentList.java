@@ -150,4 +150,9 @@ public class StudentList {
     public ArrayList<Student> getStudentList() {
         return this.students;
     }
+
+    public int getNextFreeID() {
+        // TODO: Implement this (After sortet List, einfach nach ID sortieren und schauen wo lücken sind
+        return 0;
+    }
 }

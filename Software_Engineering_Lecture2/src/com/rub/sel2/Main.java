@@ -50,5 +50,10 @@ public class Main {
         } catch (Exception ex) {
             System.out.println("Element in copyOfStudents: Existiert nicht!");
         }
+
+        //Method-Testing
+
     }
+
+
 }
