@@ -1,6 +1,10 @@
 package com.rub.sel2;
 import java.util.Date;
 
+/**
+ * Software Engineering Lecture 2: Java
+ * @author Simon Pohlenz, 108020218825, Group AG1001
+ */
 public class Student {
     private String firstname, lastname;
     private long studentId;
@@ -51,6 +55,15 @@ public class Student {
 
     public void setBirthday(Date birthday) {
         this.birthday = birthday;
+    }
+
+    @Override
+    /**
+     * Overrides the toString Method, for returning the student-data.
+     * @return String: "StudentID FirstName LastName Weight Birthday"
+     */
+    public String toString() {
+        return this.studentId + " " + this.firstname + " " + this.lastname + " " + this.weight + " " + this.birthday;
     }
 }
 
