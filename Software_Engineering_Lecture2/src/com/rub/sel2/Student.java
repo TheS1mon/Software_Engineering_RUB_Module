@@ -21,7 +21,7 @@ public class Student {
 
     // Constructors
     public Student() {
-        this(null, null, 1, 0, new Date(0));
+        this(null, null, 0, 0, new Date(0));
     }
 
     public Student (String firstname, String lastname, long studentId, double weight, Date birthday) {
@@ -29,7 +29,7 @@ public class Student {
         this.lastname = lastname;
         this.studentId = studentId;
         this.weight = weight;
-        this.birthday = birthday;
+        this.birthday = new Date(birthday.getYear() - 1900, birthday.getMonth(), birthday.getDay());
     }
 
     // Getter

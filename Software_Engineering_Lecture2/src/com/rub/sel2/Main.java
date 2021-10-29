@@ -52,7 +52,22 @@ public class Main {
         }
 
         //Method-Testing
+        students.remove(5);
+        System.out.println(students.getNextFreeID());
+        System.out.println(students.toString());
 
+        /* Sorting testing
+        System.out.println(students.toString());
+        students.sort(Student.SortKey.FIRSTNAME);
+        System.out.println(students.toString());
+        students.sort(Student.SortKey.LASTNAME);
+        System.out.println(students.toString());
+        students.sort(Student.SortKey.STUDENT_ID);
+        System.out.println(students.toString());
+        students.sort(Student.SortKey.BIRTHDAY);
+        System.out.println(students.toString());
+        students.sort(Student.SortKey.WEIGHT);
+        System.out.println(students.toString()); */
     }
 
 

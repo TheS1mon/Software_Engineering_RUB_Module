@@ -152,7 +152,164 @@ public class StudentList {
     }
 
     public int getNextFreeID() {
-        // TODO: Implement this (After sortet List, einfach nach ID sortieren und schauen wo lücken sind
-        return 0;
+        this.sort(Student.SortKey.STUDENT_ID);
+        int i = 1;
+        for(Student x: students) {
+            if(x.getStudentId() == i) { i++; }
+            else { return i; }
+        }
+        return i;
+    }
+
+    @Override
+    public String toString() {
+        String output = "";
+        for (Student x : students) {
+            output += x.toString() + "\n";
+        }
+        return output;
+    }
+
+    /**
+     *  Sorts the whole student-list by on of its attributes
+     * @param sortKey: WEIGHT, BIRTHDAY, LASTNAME, FIRSTNAME, STUDENT_ID
+     * /
+     */
+    public void sort(Student.SortKey sortKey) {
+        switch (sortKey) {
+            case WEIGHT:
+                this.sortByWeight();
+                break;
+            case BIRTHDAY:
+                this.sortByBirthday();
+                break;
+            case LASTNAME:
+                this.sortByLastname();
+                break;
+            case STUDENT_ID:
+                this.sortByStudentId();
+                break;
+            case FIRSTNAME:
+                this.sortByFirstname();
+        }
+    }
+    private void sortByFirstname() {
+        // BubbleSort Implementation for sorting purposes
+        Student temp;
+        for(int i = 1; i < students.size(); i++) { // repeat the sorting for each element
+            for(int j = 0; j < students.size() - i; j++) { // one turn on bubblesort
+                if(students.get(j).getFirstname().compareTo(students.get(j+1).getFirstname()) > 0) { // Compares the both values
+                    // Scramble both elements if the first is bigger
+                    if (j+1 != students.size()) {
+                        temp = students.get(j);
+                        students.remove(j);
+                        students.add(j, students.get(j));
+                        students.remove(j+1);
+                        if(j < students.size()) {
+                            students.add(j+1, temp);
+                        } else {
+                            students.add(temp);
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+    private void sortByLastname() {
+        // BubbleSort Implementation for sorting purposes
+        Student temp;
+        for(int i = 1; i < students.size(); i++) { // repeat the sorting for each element
+            for(int j = 0; j < students.size() - i; j++) { // one turn on bubblesort
+                if(students.get(j).getLastname().compareTo(students.get(j+1).getLastname()) > 0) { // Compares the both values
+                    // Scramble both elements if the first is bigger
+                    if (j+1 != students.size()) {
+                        temp = students.get(j);
+                        students.remove(j);
+                        students.add(j, students.get(j));
+                        students.remove(j+1);
+                        if(j < students.size()) {
+                            students.add(j+1, temp);
+                        } else {
+                            students.add(temp);
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+    private void sortByStudentId() {
+        // BubbleSort Implementation for sorting purposes
+        Student temp;
+        for(int i = 1; i < students.size(); i++) { // repeat the sorting for each element
+            for(int j = 0; j < students.size() - i; j++) { // one turn on bubblesort
+                if(students.get(j).getStudentId() > students.get(j+1).getStudentId()) { // Compares the both values
+                    // Scramble both elements if the first is bigger
+                    if (j+1 != students.size()) {
+                        temp = students.get(j);
+                        students.remove(j);
+                        students.add(j, students.get(j));
+                        students.remove(j+1);
+                        if(j < students.size()) {
+                            students.add(j+1, temp);
+                        } else {
+                            students.add(temp);
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+    private void sortByWeight() {
+        // BubbleSort Implementation for sorting purposes
+        Student temp;
+        for(int i = 1; i < students.size(); i++) { // repeat the sorting for each element
+            for(int j = 0; j < students.size() - i; j++) { // one turn on bubblesort
+                if(students.get(j).getWeight() > students.get(j+1).getWeight()) { // Compares the both values
+                    // Scramble both elements if the first is bigger
+                    if (j+1 != students.size()) {
+                        temp = students.get(j);
+                        students.remove(j);
+                        students.add(j, students.get(j));
+                        students.remove(j+1);
+                        if(j < students.size()) {
+                            students.add(j+1, temp);
+                        } else {
+                            students.add(temp);
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+    private void sortByBirthday() {
+        // BubbleSort Implementation for sorting purposes
+        Student temp;
+        for(int i = 1; i < students.size(); i++) { // repeat the sorting for each element
+            for(int j = 0; j < students.size() - i; j++) { // one turn on bubblesort
+                if(students.get(j).getBirthday().compareTo(students.get(j+1).getBirthday()) > 0) { // Compares the both values
+                    // Scramble both elements if the first is bigger
+                    if (j+1 != students.size()) {
+                        temp = students.get(j);
+                        students.remove(j);
+                        students.add(j, students.get(j));
+                        students.remove(j+1);
+                        if(j < students.size()) {
+                            students.add(j+1, temp);
+                        } else {
+                            students.add(temp);
+                        }
+                    }
+                }
+
+            }
+        }
     }
 }
