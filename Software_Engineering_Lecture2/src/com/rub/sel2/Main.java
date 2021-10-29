@@ -1,5 +1,6 @@
 package com.rub.sel2;
 
+import java.io.Console;
 import java.util.Date;
 import java.util.ArrayList;
 
@@ -37,6 +38,7 @@ public class Main {
         students.add(s10);
         students.add(s11);
 
+        System.out.println("Copy Test:");
         // Creating a Copy of the StudentList
         StudentList copyOfStudents = new StudentList(students.getStudentList());
 
@@ -51,11 +53,6 @@ public class Main {
             System.out.println("Element in copyOfStudents: Existiert nicht!");
         }
 
-        //Method-Testing
-        students.remove(5);
-        System.out.println(students.getNextFreeID());
-        System.out.println(students.toString());
-
         /* Sorting testing
         System.out.println(students.toString());
         students.sort(Student.SortKey.FIRSTNAME);
@@ -68,7 +65,22 @@ public class Main {
         System.out.println(students.toString());
         students.sort(Student.SortKey.WEIGHT);
         System.out.println(students.toString()); */
+
+        runInterface();
     }
 
+    public static void runInterface() {
+        System.out.println("\n\n\nStudentenmanagementsystem by Simon. Wählen Sie eine Option:");
+        System.out.println("\t(1) Vollständige Studentenliste ausgeben");
 
+        Console console = System.console();
+
+        if(console == null) {
+            System.out.println("Console is not available to current JVM process");
+            return;
+        }
+
+        String selection = console.readLine("\nNummer: ");
+        System.out.println("Eingegebene Nummer " + selection);
+    }
 }
