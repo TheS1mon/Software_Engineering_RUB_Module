@@ -15,7 +15,7 @@ public class StudentList {
     }
     public StudentList(ArrayList<Student> newList) {
         this.students = new ArrayList<Student>(newList);
-    }
+    } // Shallow copy, because we can't use Collections.Copy
 
     // Methods
     /**

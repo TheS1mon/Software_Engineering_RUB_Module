@@ -113,8 +113,9 @@ public class Main {
                         int birthdayMonth = Integer.parseInt(myObj.nextLine());
                         System.out.print("Geburtstag: ");
                         int birthdayDay = Integer.parseInt(myObj.nextLine());
-                        students.add(new Student(firstname, lastname, students.getNextFreeID(), weight, new Date(birthdayYear, birthdayMonth, birthdayDay)));
-                        System.out.println("Student erfolgreich erstellt.");
+                        int nextID = students.getNextFreeID();
+                        students.add(new Student(firstname, lastname, nextID, weight, new Date(birthdayYear, birthdayMonth, birthdayDay)));
+                        System.out.println("Student erfolgreich erstellt mit der ID " + nextID + ".");
                         break;
                     case 3: // Studenten entfernen
                         System.out.print("Listenposition des Studenten (1 - " + students.size() + "): ");
