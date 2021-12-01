@@ -57,5 +57,6 @@ public class Main {
                     break;
             }
         } while (!leaveApartment);
+        System.out.println("You leaved the building");
     }
 }

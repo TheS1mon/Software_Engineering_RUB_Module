@@ -4,6 +4,7 @@ public class Room {
     private String name;
     private boolean lightning;
 
+
     public void enter() {
 
     }
